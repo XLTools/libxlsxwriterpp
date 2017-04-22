@@ -74,7 +74,11 @@ void Worksheet::write_string(const Row row,
     const Format &format)
 {
     assert(ptr && "Worksheet cannot be null.");
-    LXW_CHECK(worksheet_write_string(ptr, row, col, string.data(), format.ptr));
+    if (string.empty()) {
+        LXW_CHECK(worksheet_write_blank(ptr, row, col, format.ptr));
+    } else {
+        LXW_CHECK(worksheet_write_string(ptr, row, col, string.data(), format.ptr));
+    }
 }
 
 
