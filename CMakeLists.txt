@@ -2,7 +2,7 @@
 #  :license: FreeBSD, see LICENSE.txt for more details.
 
 cmake_minimum_required(VERSION 2.8)
-project(xlsxwriter++ CXX)
+project(xlsxwriterpp CXX)
 
 # OPTIONS
 # -------
@@ -41,7 +41,7 @@ include_directories(include)
 include_directories(libxlsxwriter/include)
 
 if(BUILD_STATIC)
-    add_library(xlsxwriter++ STATIC ${LXWPP_SOURCES})
+    add_library(xlsxwriterpp STATIC ${LXWPP_SOURCES})
 else()
-    add_library(xlsxwriter++ SHARED ${LXWPP_SOURCES})
+    add_library(xlsxwriterpp SHARED ${LXWPP_SOURCES})
 endif()
